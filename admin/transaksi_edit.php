@@ -1,4 +1,4 @@
-<?php
+\<?php
 include 'header.php';
 ?>
 
@@ -30,16 +30,16 @@ include '../koneksi.php';
 
 						<div class="form-group">
 							<label>Pelanggan</label>
-							<select class="form-control" name="pelangggan" required="required">
+							<select class="form-control" name="pelanggan" required="required">
 								<option value="">- Pilih Pelanggan</option>
 
 								<?php
 							
-								$data = mysqli_query($koneksi, "select * from pelangggan");
+								$data = mysqli_query($koneksi, "select * from pelanggan");
 							
 								while($d=mysqli_fetch_array($data)){
 									?>
-									<option <?php if($d['pelanggan_id']==$t['transaksi_pelanggan']){echo "selected='selected'";} ?> value="<?php echo $d['pelanggan_id']; ?>"><?php echo $d['pelanggan_nama']; ?></option>
+									<option <?php if($d['id_pelanggan']==$t['transaksi_pelanggan']){echo "selected='selected'";} ?> value="<?php echo $d['id_pelanggan']; ?>"><?php echo $d['nama_pelanggan']; ?></option>
 									<?php
 
 								}
@@ -72,25 +72,25 @@ include '../koneksi.php';
 							while($p=mysqli_fetch_array($pakaian)){
 								?>
 								<tr>
-									<td><input type="text" class="form-control" name="jenis_pakaian[]" value="<?php echo $p['pakaian_jenis']; ?>"></td>
-									<td><input type="number" class="form-control" name="jumlah_pakaian[]" value="<?php echo $p['pakaian_jumlah']; ?>"></td>
+									<td><input type="text" class="form-control" name="pakaian_jenis[]" value="<?php echo $p['pakaian_jenis']; ?>"></td>
+									<td><input type="number" class="form-control" name="pakaian_jumlah[]" value="<?php echo $p['pakaian_jumlah']; ?>"></td>
 								</tr>
 								<?php } ?>
 								<tr>
-									<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-									<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
+									<td><input type="text" class="form-control" name="pakaian_jenis[]"></td>
+									<td><input type="number" class="form-control" name="pakaian_jumlah[]"></td>
 								</tr>
 								<tr>
-									<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-									<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
+									<td><input type="text" class="form-control" name="pakaian_jenis[]"></td>
+									<td><input type="number" class="form-control" name="pakaian_jumlah[]"></td>
 								</tr>
 								<tr>
-									<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-									<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
+									<td><input type="text" class="form-control" name="pakaian_jenis[]"></td>
+									<td><input type="number" class="form-control" name="pakaian_jumlah[]"></td>
 								</tr>
 								<tr>
-									<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-									<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
+									<td><input type="text" class="form-control" name="pakaian_jenis[]"></td>
+									<td><input type="number" class="form-control" name="pakaian_jumlah[]"></td>
 								</tr>
 							</table>
 

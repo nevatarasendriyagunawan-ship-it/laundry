@@ -6,10 +6,10 @@
     <script type="text/javascript" src="../assets/js/jquery.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
 </head>
-<body style="background: #000000ff;">
+<body style="background: #ffffffff;">
 	<?php
 	session_start();
-	if ($_SESSION['status']!="login"){
+	if ($_SESSION['status']!="login") {
 		header("location:../index.php?pesan=belum_login");
 	}
 	?>
@@ -33,7 +33,7 @@
 							   <li><a href="ganti_password.php"><i class="glyphicon glyphicon-lock"></i>Ganti Password</a></li>
 							</ul>
 						</li>
-						<li><a href="logout.php"><i class ="glyphicon glyphicon-log-out"></i>Log OUt</a></li>
+						<li><a href="logout.php"><i class ="glyphicon glyphicon-log-out"></i>Log Ot</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right"><li><p class="navbar-text">Hallo, <b>
 						<?php echo $_SESSION['username']; ?></b>!</p></li>

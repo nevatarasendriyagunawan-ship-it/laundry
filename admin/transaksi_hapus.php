@@ -1,6 +1,13 @@
 <?php
-include '../koneksi.php';
-$id = $_GET['id'];
-mysqli_query($koneksi,"delete from pelanggan where id_pelanggan='$id'");
-echo "<script>alert('Data akan dihapus?'); window.location.href='pelanggan.php'</script>";
+    include '../koneksi.php';
+
+    $id = $_GET['id'];
+
+
+    mysqli_query($koneksi, "DELETE FROM pakaian WHERE pakaian_transaksi = '$id'");
+
+
+    mysqli_query($koneksi, "DELETE FROM transaksi WHERE transaksi_id = '$id'");
+
+    header("location:transaksi.php");
 ?>

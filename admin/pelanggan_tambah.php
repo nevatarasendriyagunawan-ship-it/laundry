@@ -1,97 +1,42 @@
-<?php
-    include 'header.php'; ?>
-<?php
-
-include '../koneksi.php';
+<?php 
+include 'header.php';
 ?>
+
 <div class="container">
-	<div class="panel">
-		<div class="panel-heading">
-			<h4>Transaksi Laundry Baru</h4>
-		</div>
-		<div class="panel-body">
-			
-			<div class="col-md-8 col-md-offset-2">
-				<a href="transaksi.php" clas="btn btn-sm btn-info pull-right">Kembali</a>
-				<br/>
-				<br/>
-				<form method="post" action="transaksi_aksi.php">
-					<div class="form-group">
-						<label>Pelanggan</label>
-						<select class="form-control" name="pelangggan" required="required">
-							<option value="">- Pilih Pelanggan</option>
-							<option value="">Ninoforyou</option>
+    <br/>
+    <br/>
+    <br/>
+    <div class="col-md-5 col-md-offset-3">
 
-							<?php
-							
-							$data = mysqli_query($koneksi, "select * from pelangggan");
-							
-							while($d=mysqli_fetch_array($data)){
-							    ?>
-							    <option value="<?php echo $d['pelanggan_id']; ?>"><? echo $d['pelanggan_nama']; ?></option>
-							    <?php
-						    }
-						    ?>
-						</select>
-					</div>
+    <div class="panel"></div>
+    <div class="panel-heading">
+        <h4>Tambah Pelanggan Baru</h4>
+        </div>
+        <div class="panel-body"></div>
+        
+        <form method="post" action="pelanggan_aksi.php">
+        <div class="form-group">
+        <label>Nama</label>
+        <input type = "text" class="form-control" name="nama" placeholder="Masukan nama ..">
+        </div>
+        <div class="form=group">
+            <label>HP</label>
+            <input type="number" class="form-control" name ="hp" placeholder="Masukan No.hp ..">
+        </div>
+        <div class="form-group">
+            <label>Alanat</label>
+            <input type="text" class="form-control" name="alamat" placeholder="Masukan alamat .."> 
+        </div>
 
-					<div class="form-group">
-						<label>Berat</label>
-						<input type="date" class="form-control" name="tgl_selesai" required="required">
-					</div>
+        <br/>
 
-					<br/>
+        <input type="submit" class="btn btn-primary" value="Simpan">
+        <a href="pelanggan.php" class="btn btn-default">Batal</a>
+        </form>
 
-					<table class="table table-bordered table-striped">
-						<tr>
-							<th>Jenis Kelamin</th>
-							<th width="20%">Jumlah</th>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="form-control" name="jenis_pakaian[]"></td>
-							<td><input type="number" class="form-control" name="jumlah_pakaian[]"></td>
-						</tr>
-					</table>
+             </div>
+         </div>
+    </div>
 
-					<input type="submit" class="btn btn-primary" value="Simpan">
-				</form>
-			</div>
-		</div>
-	</div>
 </div>
+<?php include 'footer.php'; ?>
